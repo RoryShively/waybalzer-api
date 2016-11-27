@@ -1,41 +1,102 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  padding-top: 50px;
-  padding-bottom: 20px;
-
-  margin-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-top: 10px;
-  border-top: 1px solid #e9e9e9;
-
-  height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #e9e9e9;
+    height: 60px;
 }
 
 /* Margin and padding
 -------------------------------------------------- */
 .lg-margin-bottom {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .lg-margin-top {
-  margin-top: 60px;
+    margin-top: 60px;
 }
 
 .md-margin-top {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .sm-margin-top {
-  margin-top: 20px;
+    margin-top: 20px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.md-padding-vert {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/* Custom Colors
+-------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6,
+p {
+    color: rgba(0,0,0, 0.8)
+}
+
+.text-muted {
+    color: rgba(0,0,0, 0.6)
+}
+
+.text-white {
+    color: rgba(255,255,255, 0.94);
+}
+
+.text-muted-white {
+    color: rgba(255,255,255, 0.74);
+}
+
+.background-primary {
+  background: #ff6e27; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #ff6e27, #ffa319); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #ff6e27, #ffa319); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #ff6e27, #ffa319); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #ff6e27, #ffa319); /* Standard syntax */
+}
+
+.white-text {
+    color: white;
+}
+
+.text-primary, a {
+    color: #ff6e27;
+}
+
+.has-error .form-control,
+.text-danger {
+    color: #bb511e;
+}
+
+.btn-primary {
+    background-color: #ff6e27;
+    border-color: #ff6e27;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #bb511e;
+    border-color: #bb511e;
 }

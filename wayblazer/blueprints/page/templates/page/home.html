@@ -6,37 +6,73 @@ outcome of a dice roll. Win points and dominate the leaderboard.{% endblock %}
 
 {% block body %}
   <div class="container sm-margin-top">
+
     <div class="row text-center lg-margin-bottom">
-      <h1>Feeling lucky?</h1>
+      <h1>Wayblazer Interview Project</h1>
       <h3 class="text-muted">
-        Test your luck against the roll of the dice and win today
+        Follow these directions to test out the application
       </h3>
     </div>
+
     <div class="row text-center">
       <div class="col-lg-4">
-        <i class="fa fa-fw fa-4x fa-bullhorn text-primary"></i>
-        <h2>Place bets</h2>
-        <p class="text-muted">Correctly guess the dice's roll.</p>
+        <i class="fa fa-fw fa-4x fa-rocket text-primary"></i>
+        <h2>Register</h2>
+        <p class="text-muted">Create an account.</p>
         <p>
-          <a href="#" class="btn btn-default">Sign up</a>
+          <a href="{{ url_for('user.signup') }}" class="btn btn-default">Sign up</a>
         </p>
       </div>
+
       <div class="col-lg-4">
-        <i class="fa fa-fw fa-4x fa-database text-primary"></i>
-        <h2>Win currency</h2>
-        <p class="text-muted">Gain coins if your guess is correct.</p>
+        <i class="fa fa-fw fa-4x fa-cloud-upload text-primary"></i>
+        <h2>Upload</h2>
+        <p class="text-muted">Upload you CSV file.</p>
         <p>
-          <a href="#" class="btn btn-default">Sign up</a>
+          <a href="{{ url_for('page.csv_upload') }}" class="btn btn-default">Upload</a>
         </p>
       </div>
+
       <div class="col-lg-4">
-        <i class="fa fa-fw fa-4x fa-trophy text-primary"></i>
-        <h2>Leaderboard</h2>
-        <p class="text-muted">Compare your results to others.</p>
+        <i class="fa fa-fw fa-4x fa-area-chart text-primary"></i>
+        <h2>Visualize</h2>
+        <p class="text-muted">Look at the data.</p>
         <p>
-          <a href="#" class="btn btn-default">Sign up</a>
+          <a href="#" class="btn btn-default">See Data</a>
         </p>
       </div>
     </div>
+  </div>
+
+  <div class="lg-margin-top md-padding-vert background-primary">
+
+    <div class="row text-center lg-margin-bottom">
+      <h1 class="text-white">Explore</h1>
+      <h3 class="text-muted-white">
+        Here's a few more options to explore this application
+      </h3>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-4 col-lg-offset-1">
+        <i class="fa fa-fw fa-4x fa-question-circle text-white"></i>
+        <h2 class="text-white">Q & A</h2>
+        <p class="text-muted-white">How did I answer the project questions.</p>
+        <p>
+          <a href="{{ url_for('user.signup') }}" class="btn btn-default">Explore</a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-lg-offset-2">
+        <i class="fa fa-fw fa-4x fa-flask text-white"></i>
+        <h2 class="text-white">REST API</h2>
+        <p class="text-muted-white">Look at the API docs.</p>
+        <p>
+          <a href="{{ url_for('page.csv_upload') }}" class="btn btn-default">Explore</a>
+        </p>
+      </div>
+
+    </div>
+
   </div>
 {% endblock %}
