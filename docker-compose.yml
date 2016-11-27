@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  postgres:
+    image: 'postgres:9.6'
+    env_file:
+      - '.env'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
+
+  redis:
+    image: 'redis:3.0-alpine'
+    command: redis-server --requirepass devpassword
+    volumes:
+      - 'redis:/var/lib/redis/data'
+    ports:
+      - '6379:6379'
+
+  website:
+    build: .
+    restart: always
+    command: >
+      gunicorn -b 0.0.0.0:8000
+        --access-logfile -
+        --reload
+        "wayblazer.app:create_app()"
+    env_file:
+      - '.env'
+    volumes:
+      - '.:/wayblazer'
+    ports:
+      - '8000:8000'
+
+  celery:
+    build: .
+    command: celery worker -l info -A wayblazer.blueprints.page.tasks
+    env_file:
+      - '.env'
+    volumes:
+      - '.:/wayblazer'
+
+volumes:
+  postgres:
+  redis:

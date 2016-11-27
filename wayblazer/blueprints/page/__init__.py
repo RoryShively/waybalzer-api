@@ -1,0 +1,1 @@
+from wayblazer.blueprints.page.views import page
