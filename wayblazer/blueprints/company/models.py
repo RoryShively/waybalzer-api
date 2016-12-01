@@ -15,9 +15,9 @@ class Company(ResourceMixin, db.Model):
     phone = db.Column(db.String(24), nullable=False, server_default='')
 
     addresses = db.relationship('Address', backref='company',
-                                lazy='joined')
+                                lazy='dynamic')
     employees = db.relationship('Employee', backref='company',
-                                lazy='joined')
+                                lazy='dynamic')
 
     def __init__(self, **kwargs):
         # Call Flask-SQLAlchemy's constructor.

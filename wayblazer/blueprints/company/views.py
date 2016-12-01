@@ -37,13 +37,12 @@ class CompaniesListAPI(Resource):
         if args.get('state'):
             companies = companies.filter(Address.state == args.get('state'))
 
-        # if args.get('employee_count'):
-        #     companies = companies.having(func.count(Company.employees) == args.get('employee_count'))
+        if args.get('employee_count'):
+            companies = companies.outerjoin(Company.employees) \
+                .group_by(Company) \
+                .having(func.count_(Company.employees) == 3)
 
         companies = companies.all()
-
-        if args.get('employee_count'):
-            companies = [project for project in companies if len(project.employees) == args.get('employee_count')]
 
         return companies_schema.jsonify(companies)
 

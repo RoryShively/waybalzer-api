@@ -39,7 +39,7 @@ class EmployeesListAPI(Resource):
         parser.add_argument('exclude_state', type=str, location='args', required=False)
         args = parser.parse_args()
 
-        employees = Employee.query.join(Company).join(Address).join(PersonalPhone)
+        employees = Employee.query.join(Company).join(Address)
 
         if args.get('company'):
             employees = employees.filter(Company.name == args.get('company'))
@@ -47,16 +47,19 @@ class EmployeesListAPI(Resource):
         if args.get('exclude_state'):
             employees = employees.filter(Address.state != args.get('exclude_state'))
 
-        # if args.get('duplicate_number') == 'true':
-        #     employees = employees.having(func.count(PersonalPhone.employees) > 1)
+        if args.get('duplicate_number') == 'true':
+            # employees = employees.having(func.count(PersonalPhone.employees) > 1)
+            employees = employees.outerjoin(Employee.phone) \
+                .group_by(Employee) \
+                .having(func.count(PersonalPhone.employees) > 1)
 
         if args.get('email_provider'):
             employees = employees.filter(Employee.email.like('%{}.com'.format(args.get('email_provider'))))
 
         employees = employees.all()
 
-        if args.get('duplicate_number') == 'true':
-            employees = [employee for employee in employees if len(employee.phone.employees) > 1]
+        # if args.get('duplicate_number') == 'true':
+        #     employees = [employee for employee in employees if len(employee.phone.employees) > 1]
 
         return employees_schema.jsonify(employees)
 
