@@ -15,4 +15,6 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN pip install --editable .
 
+EXPOSE 3000
+
 CMD gunicorn -b 0.0.0.0:8000 --access-logfile - "wayblazer.app:create_app()"

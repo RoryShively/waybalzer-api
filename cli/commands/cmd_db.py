@@ -5,6 +5,8 @@ from sqlalchemy_utils import database_exists, create_database
 from wayblazer.app import create_app
 from wayblazer.extensions import db
 from wayblazer.blueprints.user.models import User
+from wayblazer.blueprints.company.models import Company
+from wayblazer.blueprints.employee.models import Employee
 
 # Create an app context for the database connection.
 app = create_app()
@@ -78,3 +80,4 @@ def reset(ctx, with_testdb):
 cli.add_command(init)
 cli.add_command(seed)
 cli.add_command(reset)
+

@@ -2,6 +2,7 @@ from flask import Flask
 from celery import Celery
 from itsdangerous import URLSafeTimedSerializer
 
+from wayblazer.blueprints.company import company
 from wayblazer.blueprints.page import page
 from wayblazer.blueprints.user import user
 from wayblazer.blueprints.user.models import User
@@ -11,6 +12,8 @@ from wayblazer.extensions import (
     csrf,
     db,
     login_manager,
+    api,
+    ma,
 )
 
 CELERY_TASK_LIST = [
@@ -64,6 +67,8 @@ def create_app(settings_override=None):
 
     app.register_blueprint(page)
     app.register_blueprint(user)
+    app.register_blueprint(company)
+
     extensions(app)
     authentication(app, User)
 
@@ -81,6 +86,8 @@ def extensions(app):
     csrf.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
+    api.init_app(app)
+    ma.init_app(app)
 
     return None
 

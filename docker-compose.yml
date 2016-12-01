@@ -6,7 +6,7 @@ services:
     env_file:
       - '.env'
     volumes:
-      - 'postgres:/var/lib/postgresql/data'
+      - 'postgres2:/var/lib/postgresql/data'
     ports:
       - '5432:5432'
 
@@ -32,6 +32,7 @@ services:
       - '.:/wayblazer'
     ports:
       - '8000:8000'
+      - '3000:3000'
 
   celery:
     build: .
@@ -42,5 +43,5 @@ services:
       - '.:/wayblazer'
 
 volumes:
-  postgres:
+  postgres2:
   redis:

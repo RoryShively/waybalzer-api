@@ -1,0 +1,1 @@
+from wayblazer.blueprints.company.views import company
