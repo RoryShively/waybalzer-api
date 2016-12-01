@@ -1,11 +1,12 @@
 from flask import Blueprint
 from flask_restful import Resource, reqparse
 from sqlalchemy.sql import func
-from marshmallow import fields
 
-from wayblazer.extensions import api, ma
+from wayblazer.extensions import api
 
 from wayblazer.blueprints.company.models import Company, Address
+from wayblazer.blueprints.company.schemas import (
+    company_schema, companies_schema, zipcode_schema, )
 
 
 company = Blueprint('company', __name__, template_folder='templates')
@@ -20,28 +21,6 @@ company = Blueprint('company', __name__, template_folder='templates')
 # What zip codes are within California?
 #   localhost:8000/api/zipcode?state=CAs
 #
-
-
-class ZipcodeSchema(ma.Schema):
-    class Meta:
-        fields = ('zip', )
-
-
-class AddressSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'route', 'city', 'state', 'zip', 'county', )
-
-
-class CompanySchema(ma.Schema):
-    addresses = fields.Nested(AddressSchema, many=True)
-
-    class Meta:
-        fields = ('id', 'name', 'web', 'phone', 'addresses', )
-
-company_schema = CompanySchema()
-companies_schema = CompanySchema(many=True)
-
-zipcode_schema = ZipcodeSchema(many=True)
 
 
 class CompaniesListAPI(Resource):
@@ -86,8 +65,6 @@ class ZipcodeAPI(Resource):
             addresses = addresses.filter(Address.state == args.get('state'))
 
         addresses = addresses.all()
-
-        # addresses = set(addresses)
 
         return zipcode_schema.jsonify(addresses)
 

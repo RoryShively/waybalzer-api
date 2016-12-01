@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9312c8c-f0db-4904-8686-845f83e5aefd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/states.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/app.iml" afterPath="$PROJECT_DIR$/.idea/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/rory.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/rory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cli/commands/cmd_db.py" afterPath="$PROJECT_DIR$/cli/commands/cmd_db.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/settings.py" afterPath="$PROJECT_DIR$/config/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/app.py" afterPath="$PROJECT_DIR$/wayblazer/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/user/templates/user/signup.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/user/templates/user/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/extensions.py" afterPath="$PROJECT_DIR$/wayblazer/extensions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/pycharm.py" afterPath="$PROJECT_DIR$/wayblazer/pycharm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/static/styles/main.css" afterPath="$PROJECT_DIR$/wayblazer/static/styles/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +37,7 @@
           <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wayblazer/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-690">
+                <state relative-caret-position="-180">
                   <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
                   <folding />
                 </state>
@@ -64,8 +47,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+                <state relative-caret-position="570">
+                  <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -76,10 +59,22 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="17" column="46" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="46" />
+                <state relative-caret-position="170">
+                  <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="schemas.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#35#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -104,8 +99,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                <state relative-caret-position="440">
+                  <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -130,8 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wayblazer/tests/conftest.py" />
-        <option value="$PROJECT_DIR$/Wayblazer_CLI.egg-info/PKG-INFO" />
         <option value="$PROJECT_DIR$/Wayblazer_CLI.egg-info/SOURCES.txt" />
         <option value="$PROJECT_DIR$/cli/commands/cmd_flake8.py" />
         <option value="$PROJECT_DIR$/cli/commands/cmd_test.py" />
@@ -179,8 +172,10 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" />
         <option value="$PROJECT_DIR$/cli/commands/cmd_db.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
       </list>
     </option>
   </component>
@@ -710,13 +705,21 @@
       <option name="presentableId" value="Default" />
       <updated>1479957801991</updated>
     </task>
+    <task id="LOCAL-00001" summary="functionally complete">
+      <created>1480624395400</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480624395400</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.153125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -748,6 +751,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="functionally complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="functionally complete" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
@@ -763,20 +770,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/util_datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/safe_next_url.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1055,14 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/extensions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1109,32 +1094,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
+    <entry file="file://$PROJECT_DIR$/wayblazer/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-180">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="17" column="46" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="46" />
+        <state relative-caret-position="170">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/views.py">
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

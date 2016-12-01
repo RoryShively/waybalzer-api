@@ -10,6 +10,8 @@ from wayblazer.extensions import api, ma
 
 from wayblazer.blueprints.company.models import Company, Address
 from wayblazer.blueprints.employee.models import Employee, PersonalPhone
+from wayblazer.blueprints.employee.schemas import (
+    employee_schema, employees_schema, )
 
 
 employee = Blueprint('employee', __name__, template_folder='templates')
@@ -24,29 +26,6 @@ employee = Blueprint('employee', __name__, template_folder='templates')
 # Bonus: Find all employees with a personal Gmail email address but exclude anyone from CA.
 #   localhost:8000/api/employee?email_provider=gmail&exclude_state=CA
 #
-
-
-class AddressSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'route', 'city', 'state', 'zip', 'county', )
-
-
-class CompanySchema(ma.Schema):
-    addresses = fields.Nested(AddressSchema, many=True)
-
-    class Meta:
-        fields = ('id', 'name', 'web', 'phone', 'addresses', )
-
-
-class EmployeeSchema(ma.Schema):
-    number = fields.Str(attribute='phone.number')
-    company = fields.Nested(CompanySchema)
-
-    class Meta:
-        fields = ('id', 'first_name', 'last_name', 'email', 'number', 'company')
-
-employee_schema = EmployeeSchema()
-employees_schema = EmployeeSchema(many=True)
 
 
 class EmployeesListAPI(Resource):
@@ -80,6 +59,7 @@ class EmployeesListAPI(Resource):
             employees = [employee for employee in employees if len(employee.phone.employees) > 1]
 
         return employees_schema.jsonify(employees)
+
 
 class EmployeeAPI(Resource):
     pass
