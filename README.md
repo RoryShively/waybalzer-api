@@ -42,29 +42,38 @@ From here you should:
 ### Database commands
 
  - Initialize the database
+ 
  `docker-compose exec website wayblazer db init`
  
  - Seed the database with one user
+ 
  `docker-compose exec website wayblazer db seed`
+ 
  _user: roryshively1@gmail.com_
+ 
  _password: asdfasdf_
  
  - Reset the database
  `docker-compose exec website wayblazer db reset`
+ 
  _clears the database, runs init, then runs seed_
 
  - Access the database in the terminal
+ 
  `docker-compose exec postgres psql -U wayblazer`
  
 ### Testing commands
 
  - Run test suite
+ 
  `docker-compose exec website wayblazer test`
  
  - Run test coverage
+ 
  `docker-compose exec website wayblazer cov`
  
  - Run flake8
+ 
  `docker-compose exec website wayblazer flake8`
  
 ## REST docs and Interview questions
