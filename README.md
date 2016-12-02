@@ -67,7 +67,14 @@ From here you should:
  - Run flake8
  `docker-compose exec website wayblazer flake8`
  
-## API Endpoints
+## REST docs and Interview questions
+
+View REST API docs and interview questions in the browser
+at `localhost:8000/rest-docs` and `localhost:8000/questions`
+respectively
+
+
+
  
 Who works for Rapid Trading Intl?
   localhost:8000/api/employee?company=Rapid%20Trading%20Intl
