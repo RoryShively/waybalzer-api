@@ -12,23 +12,23 @@ This project has been tested using:
 
 1. Open up your terminal under the directory you want to put this project in and clone this repo
 
-`git clone https://github.com/RoryShively/wb.git`
+    `git clone https://github.com/RoryShively/wb.git`
 
 2. cd into the project
 
-`cd wb`
+    `cd wb`
 
 3. Build the containers with docker-compose and run them
 
-`docker-compose up --build`'
+    `docker-compose up --build`'
 
 4. In another terminal window and cd into the project directory
 
-`cd /path/to/directory/`
+    `cd /path/to/directory/`
 
 5. Initiaize the database to create tables
 
-`docker-compose exec website wayblazer db init`
+    `docker-compose exec website wayblazer db init`
 
 6. Open up your browser and go to `localhost:8000`
 
