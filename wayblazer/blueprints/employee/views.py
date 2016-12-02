@@ -1,10 +1,9 @@
-from collections import deque
+import re
+from collections import OrderedDict
 
 from flask import Blueprint
 from flask_restful import Resource, reqparse
-from flask_sqlalchemy import Pagination
 from sqlalchemy.sql import func
-from marshmallow import fields
 
 from wayblazer.extensions import api, ma
 
@@ -12,7 +11,6 @@ from wayblazer.blueprints.company.models import Company, Address
 from wayblazer.blueprints.employee.models import Employee, PersonalPhone
 from wayblazer.blueprints.employee.schemas import (
     employee_schema, employees_schema, )
-
 
 employee = Blueprint('employee', __name__, template_folder='templates')
 
@@ -29,45 +27,117 @@ employee = Blueprint('employee', __name__, template_folder='templates')
 
 
 class EmployeesListAPI(Resource):
-
     def get(self):
+
+        # TODO: offset and limit has to be positive
+        # TODO: show total entrees in results
+        # TODO: limit url links to positive #'s
+        # TODO: fix duplicate phone number problem
 
         parser = reqparse.RequestParser()
         parser.add_argument('company', type=str, location='args', required=False)
         parser.add_argument('duplicate_number', type=str, location='args', required=False)
         parser.add_argument('email_provider', type=str, location='args', required=False)
         parser.add_argument('exclude_state', type=str, location='args', required=False)
+        parser.add_argument('limit', type=int, location='args', required=False)
+        parser.add_argument('offset', type=int, location='args', required=False)
         args = parser.parse_args()
 
         employees = Employee.query.join(Company).join(Address)
 
+        """ Refine query based on parameters passed in url. """
+        # Filter based on employees company
         if args.get('company'):
             employees = employees.filter(Company.name == args.get('company'))
 
+        # Filter based on which state to exclude in the query
         if args.get('exclude_state'):
             employees = employees.filter(Address.state != args.get('exclude_state'))
 
-        if args.get('duplicate_number') == 'true':
-            # employees = employees.having(func.count(PersonalPhone.employees) > 1)
-            employees = employees.outerjoin(Employee.phone) \
-                .group_by(Employee) \
-                .having(func.count(PersonalPhone.employees) > 1)
-
+        # Filter based on email provider (i.e. `?email_provider=gmail` for all gmail accounts)
         if args.get('email_provider'):
             employees = employees.filter(Employee.email.like('%{}.com'.format(args.get('email_provider'))))
 
-        employees = employees.all()
+        # Paginate query based on offset and limit
+        employees_query = employees.limit(args.get('limit', 10)) \
+            .offset(args.get('offset', 0))
+
+        # Get the number of entrees in query before pagination to get a running total
+        employees_count = employees.count()
+
+        # Dump results into the employees schema
+        results = employees_schema.dump(employees_query)
 
         # if args.get('duplicate_number') == 'true':
         #     employees = [employee for employee in employees if len(employee.phone.employees) > 1]
 
-        return employees_schema.jsonify(employees)
+        return OrderedDict({
+            "previous": build_previous_url(self, args=args,
+                                           limit=args.get('limit', 10),
+                                           offset=args.get('offset', 0)),
+            "next": build_next_url(self, args=args,
+                                   limit=args.get('limit', 10),
+                                   offset=args.get('offset', 0),
+                                   count=employees_count),
+            "pages": employees_count // args.get('limit', 10),
+            "count": employees_count,
+            "results": results.data
+        })
+
+
+def build_previous_url(resource, args, limit, offset):
+    if offset - limit < 0:
+        return None
+
+    url = api.url_for(resource, _external=True)
+    limit = limit
+    offset = offset - limit
+
+    params = []
+    for arg in args:
+        print(arg)
+        if args.get(arg) and (arg not in ['limit', 'offset']):
+            value = re.sub(' ', '+', str(args.get(arg)))
+            params.append('{}={}'.format(arg, value))
+
+    params.append('limit={}'.format(limit))
+    params.append('offset={}'.format(offset))
+
+    print(params)
+
+    params = '&'.join(params)
+
+    return '{}?{}'.format(url, params)
+
+
+def build_next_url(resource, args, limit, offset, count):
+    if offset + limit > count:
+        return None
+
+    url = api.url_for(resource, _external=True)
+    limit = limit
+    offset = offset + limit
+
+    params = []
+    for arg in args:
+        print(arg)
+        if args.get(arg) and (arg not in ['limit', 'offset']):
+            value = re.sub(' ', '+', str(args.get(arg)))
+            params.append('{}={}'.format(arg, value))
+
+    params.append('limit={}'.format(limit))
+    params.append('offset={}'.format(offset))
+
+    print(params)
+
+    params = '&'.join(params)
+
+    return '{}?{}'.format(url, params)
 
 
 class EmployeeAPI(Resource):
     pass
 
+
 api.add_resource(EmployeesListAPI, '/api/employee', endpoint='employees')
 api.add_resource(EmployeeAPI, '/api/employee/<int:id>', endpoint='employee')
-
-
