@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9312c8c-f0db-4904-8686-845f83e5aefd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/util_pagination.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/util_pagination.py" afterPath="$PROJECT_DIR$/lib/util_pagination.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
     </list>
     <ignored path="app.iws" />
@@ -57,10 +57,22 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1260">
-                  <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+                <state relative-caret-position="545">
+                  <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="util_pagination.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/util_pagination.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="545">
+                  <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -133,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cli/commands/cmd_cov.py" />
         <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/Wayblazer_CLI.egg-info/entry_points.txt" />
         <option value="$PROJECT_DIR$/setup.py" />
@@ -183,6 +194,7 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/employee.sql" />
         <option value="$PROJECT_DIR$/lib/lib_pagination.py" />
+        <option value="$PROJECT_DIR$/lib/util_pagination.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
       </list>
     </option>
@@ -755,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480652080811</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lib.util_pagination created">
+      <created>1480653389296</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480653389296</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -799,7 +818,8 @@
     <MESSAGE value="separated schemas from views" />
     <MESSAGE value="fixed employee count query for companies" />
     <MESSAGE value="added pagination to employees" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pagination to employees" />
+    <MESSAGE value="lib.util_pagination created" />
+    <option name="LAST_COMMIT_MESSAGE" value="lib.util_pagination created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1198,16 +1218,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/util_pagination.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="545">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+        <state relative-caret-position="545">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

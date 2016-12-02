@@ -4,7 +4,7 @@ from flask import Blueprint
 from flask_restful import Resource, reqparse
 from sqlalchemy.sql import func
 
-from lib.util_pagination import build_next_url, build_previous_url
+from lib.util_pagination import build_next_url, build_previous_url, paginated_results
 
 from wayblazer.extensions import api, ma
 
@@ -70,18 +70,12 @@ class EmployeesListAPI(Resource):
         # if args.get('duplicate_number') == 'true':
         #     employees = [employee for employee in employees if len(employee.phone.employees) > 1]
 
-        return OrderedDict({
-            "previous": build_previous_url(self, args=args,
-                                           limit=args.get('limit', 10),
-                                           offset=args.get('offset', 0)),
-            "next": build_next_url(self, args=args,
-                                   limit=args.get('limit', 10),
-                                   offset=args.get('offset', 0),
-                                   count=employees_count),
-            "pages": employees_count // args.get('limit', 10),
-            "count": employees_count,
-            "results": results.data
-        })
+        return paginated_results(self,
+                                 results=results.data,
+                                 args=args,
+                                 limit=args.get('limit', 10),
+                                 offset=args.get('offset', 0),
+                                 count=employees_count)
 
 
 class EmployeeAPI(Resource):

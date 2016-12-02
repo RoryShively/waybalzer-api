@@ -1,4 +1,5 @@
 import re
+from collections import OrderedDict
 
 from wayblazer.extensions import api
 
@@ -51,3 +52,13 @@ def build_next_url(resource, args, limit, offset, count):
     params = '&'.join(params)
 
     return '{}?{}'.format(url, params)
+
+
+def paginated_results(resource, results, args, limit, offset, count):
+    return OrderedDict({
+        "previous": build_previous_url(resource, args, limit, offset),
+        "next": build_next_url(resource, args, limit, offset, count),
+        "pages": count // limit,
+        "count": count,
+        "results": results
+    })
