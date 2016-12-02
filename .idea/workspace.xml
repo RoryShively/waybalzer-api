@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9312c8c-f0db-4904-8686-845f83e5aefd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/app.py" afterPath="$PROJECT_DIR$/wayblazer/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/company/models.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/company/states.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/states.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/models.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/parsers.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/parsers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/tasks.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/tasks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/user/forms.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/user/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/user/models.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/user/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,21 +43,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rest-docs.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rest-docs.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questions.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="questions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="csv.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/csv.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -91,8 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/instance/settings.py_production_example" />
         <option value="$PROJECT_DIR$/instance/settings.py" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/wayblazer/templates/macros/form.html" />
@@ -111,7 +117,6 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/user/templates/user/settings.html" />
         <option value="$PROJECT_DIR$/wayblazer/templates/layouts/login.html" />
         <option value="$PROJECT_DIR$/wayblazer/templates/layouts/base.html" />
-        <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" />
         <option value="$PROJECT_DIR$/wayblazer/static/styles/main.css" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/user/templates/user/signup.html" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/__init__.py" />
@@ -142,6 +147,9 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/tasks.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/user/forms.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
       </list>
     </option>
   </component>
@@ -927,14 +935,21 @@
       <option name="project" value="LOCAL" />
       <updated>1480718186485</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="pep8ified and created pages for rest-docs and questions">
+      <created>1480719098960</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1480719098960</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -976,7 +991,8 @@
     <MESSAGE value="*bug fix* limit / offset arg" />
     <MESSAGE value="separated parser from employee views" />
     <MESSAGE value="updated readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated readme" />
+    <MESSAGE value="pep8ified and created pages for rest-docs and questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="pep8ified and created pages for rest-docs and questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1014,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/csv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/templates/layouts/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1032,13 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="70" column="84" selection-start-line="70" selection-start-column="84" selection-end-line="70" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -1394,10 +1396,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html">
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/csv.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1405,7 +1415,15 @@
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding />
         </state>
       </provider>
