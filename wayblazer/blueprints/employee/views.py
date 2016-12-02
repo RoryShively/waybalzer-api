@@ -41,6 +41,8 @@ class EmployeesListAPI(Resource):
         parser.add_argument('limit', type=int, location='args', required=False)
         parser.add_argument('offset', type=int, location='args', required=False)
         args = parser.parse_args()
+        limit = args.get('limit') if args.get('limit') else 10
+        offset = args.get('offset') if args.get('offset') else 0
 
         employees = Employee.query.join(Company).join(Address)
 
@@ -73,8 +75,8 @@ class EmployeesListAPI(Resource):
         return paginated_results(self,
                                  results=results.data,
                                  args=args,
-                                 limit=args.get('limit', 10),
-                                 offset=args.get('offset', 0),
+                                 limit=limit,  # Returns None
+                                 offset=offset,  # Returns None
                                  count=employees_count)
 
 

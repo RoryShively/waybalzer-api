@@ -14,15 +14,13 @@ def build_previous_url(resource, args, limit, offset):
 
     params = []
     for arg in args:
-        print(arg)
+
         if args.get(arg) and (arg not in ['limit', 'offset']):
             value = re.sub(' ', '+', str(args.get(arg)))
             params.append('{}={}'.format(arg, value))
 
     params.append('limit={}'.format(limit))
     params.append('offset={}'.format(offset))
-
-    print(params)
 
     params = '&'.join(params)
 
@@ -39,15 +37,13 @@ def build_next_url(resource, args, limit, offset, count):
 
     params = []
     for arg in args:
-        print(arg)
+
         if args.get(arg) and (arg not in ['limit', 'offset']):
             value = re.sub(' ', '+', str(args.get(arg)))
             params.append('{}={}'.format(arg, value))
 
     params.append('limit={}'.format(limit))
     params.append('offset={}'.format(offset))
-
-    print(params)
 
     params = '&'.join(params)
 
