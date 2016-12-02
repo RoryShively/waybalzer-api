@@ -1,1 +1,3 @@
-{}
+{
+  "wayblazer/tests/page/test_views.py::TestPage::()::test_csv_upload_page": true
+}

@@ -38,3 +38,45 @@ From here you should:
  - Upload `us-500.csv`
 
 ## Command line Tools
+
+### Database commands
+
+ - Initialize the database
+ `docker-compose exec website wayblazer db init`
+ 
+ - Seed the database with one user
+ `docker-compose exec website wayblazer db seed`
+ _user: roryshively1@gmail.com_
+ _password: asdfasdf_
+ 
+ - Reset the database
+ `docker-compose exec website wayblazer db reset`
+ _clears the database, runs init, then runs seed_
+
+ - Access the database in the terminal
+ `docker-compose exec postgres psql -U wayblazer`
+ 
+### Testing commands
+
+ - Run test suite
+ `docker-compose exec website wayblazer test`
+ 
+ - Run test coverage
+ `docker-compose exec website wayblazer cov`
+ 
+ - Run flake8
+ `docker-compose exec website wayblazer flake8`
+ 
+## API Endpoints
+ 
+Who works for Rapid Trading Intl?
+  localhost:8000/api/employee?company=Rapid%20Trading%20Intl
+
+Do any employees have the same personal phone number? 504-845-1427
+  localhost:8000/api/employee?duplicate_number=true
+
+Bonus: Find all employees with a personal Gmail email address but exclude
+ anyone from CA.
+  localhost:8000/api/employee?email_provider=gmail&exclude_state=CA
+
+

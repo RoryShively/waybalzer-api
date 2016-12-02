@@ -1,30 +1,20 @@
 from collections import OrderedDict
 
 from flask import Blueprint
-from flask_restful import Resource, reqparse
+from flask_restful import Resource
 from sqlalchemy.sql import func
 
-from lib.util_pagination import build_next_url, build_previous_url, paginated_results
+from lib.util_pagination import paginated_results
 
-from wayblazer.extensions import api, ma
+from wayblazer.extensions import api
 
 from wayblazer.blueprints.company.models import Company, Address
 from wayblazer.blueprints.employee.models import Employee, PersonalPhone
+from wayblazer.blueprints.employee.parsers import get_employees_list_parser
 from wayblazer.blueprints.employee.schemas import (
     employee_schema, employees_schema, )
 
 employee = Blueprint('employee', __name__, template_folder='templates')
-
-
-# Who works for Rapid Trading Intl?
-#   localhost:8000/api/employee?company=Rapid%20Trading%20Intl
-#
-# Do any employees have the same personal phone number? 504-845-1427
-#   localhost:8000/api/employee?duplicate_number=true
-#
-# Bonus: Find all employees with a personal Gmail email address but exclude anyone from CA.
-#   localhost:8000/api/employee?email_provider=gmail&exclude_state=CA
-#
 
 
 class EmployeesListAPI(Resource):
@@ -33,14 +23,9 @@ class EmployeesListAPI(Resource):
         # TODO: limit url links to positive #'s
         # TODO: fix duplicate phone number problem
 
-        parser = reqparse.RequestParser()
-        parser.add_argument('company', type=str, location='args', required=False)
-        parser.add_argument('duplicate_number', type=str, location='args', required=False)
-        parser.add_argument('email_provider', type=str, location='args', required=False)
-        parser.add_argument('exclude_state', type=str, location='args', required=False)
-        parser.add_argument('limit', type=int, location='args', required=False)
-        parser.add_argument('offset', type=int, location='args', required=False)
+        parser = get_employees_list_parser()
         args = parser.parse_args()
+
         limit = args.get('limit') if args.get('limit') else 10
         offset = args.get('offset') if args.get('offset') else 0
 
