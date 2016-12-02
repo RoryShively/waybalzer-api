@@ -80,7 +80,14 @@ From here you should:
 ## REST docs and Interview questions
 
 View REST API docs and interview questions in the browser
-at `localhost:8000/rest-docs` and `localhost:8000/questions`
+at 
+
+`localhost:8000/rest-docs` 
+
+and 
+
+`localhost:8000/questions`
+
 respectively
 
 
