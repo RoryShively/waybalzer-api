@@ -3,6 +3,7 @@ from wayblazer.app import create_celery_app
 
 celery = create_celery_app()
 
+
 @celery.task()
 def upload_csv(filename, form):
     """

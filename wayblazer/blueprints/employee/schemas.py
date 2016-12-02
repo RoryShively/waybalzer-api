@@ -20,7 +20,9 @@ class EmployeeSchema(ma.Schema):
     company = fields.Nested(CompanySchema)
 
     class Meta:
-        fields = ('id', 'first_name', 'last_name', 'email', 'number', 'company')
+        fields = ('id', 'first_name', 'last_name',
+                  'email', 'number', 'company')
+
 
 employee_schema = EmployeeSchema()
 employees_schema = EmployeeSchema(many=True)

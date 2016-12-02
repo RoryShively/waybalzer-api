@@ -10,7 +10,8 @@ class Company(ResourceMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
-    name = db.Column(db.String(128), index=True, nullable=False, server_default='')
+    name = db.Column(db.String(128), index=True,
+                     nullable=False, server_default='')
     web = db.Column(db.String(1024), nullable=False, server_default='')
     phone = db.Column(db.String(24), nullable=False, server_default='')
 
@@ -32,12 +33,16 @@ class Address(ResourceMixin, db.Model):
 
     company_id = db.Column(db.Integer, db.ForeignKey('companies.id'))
 
-    route = db.Column(db.String(64), index=True, nullable=False, server_default='')
-    city = db.Column(db.String(64), index=True, nullable=False, server_default='')
-    county = db.Column(db.String(64), index=True, nullable=False, server_default='')
+    route = db.Column(db.String(64), index=True,
+                      nullable=False, server_default='')
+    city = db.Column(db.String(64), index=True,
+                     nullable=False, server_default='')
+    county = db.Column(db.String(64), index=True,
+                       nullable=False, server_default='')
     state = db.Column(db.Enum(*STATES, name='states', native_enum=False),
                       index=True, nullable=False, server_default='')
-    zip = db.Column(db.String(10), index=True, nullable=False, server_default='')
+    zip = db.Column(db.String(10), index=True,
+                    nullable=False, server_default='')
 
     def __init__(self, **kwargs):
         # Call Flask-SQLAlchemy's constructor.

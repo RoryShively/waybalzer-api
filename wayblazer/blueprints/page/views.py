@@ -41,7 +41,8 @@ def csv_upload():
         reader = csv.DictReader(file_lines)
         for row in reader:
 
-            company = Company.query.filter_by(name=row.get('company_name')).first()
+            company = Company.query.filter_by(
+                name=row.get('company_name')).first()
 
             if not company:
                 # Create company instance.
@@ -75,7 +76,8 @@ def csv_upload():
                 company=company
             )
 
-            phone = PersonalPhone.query.filter_by(number=row.get('personal_phone2')).first()
+            phone = PersonalPhone.query.filter_by(
+                number=row.get('personal_phone2')).first()
 
             if not phone:
                 phone = PersonalPhone(
@@ -96,3 +98,13 @@ def csv_upload():
         filename = None
 
     return render_template('page/csv.html', form=form, filename=filename)
+
+
+@page.route('/rest-docs')
+def rest_docs():
+    return render_template('page/rest-docs.html')
+
+
+@page.route('/questions')
+def questions():
+    return render_template('page/questions.html')

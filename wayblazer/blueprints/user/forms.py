@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Length, Optional, Regexp
 from wtforms_components import EmailField, Email
 # Unique
 from lib.util_wtforms import ModelForm
-from wayblazer.blueprints.user.models import User, db
+# from wayblazer.blueprints.user.models import User, db
 from wayblazer.blueprints.user.validations import ensure_identity_exists, \
     ensure_existing_password_matches
 

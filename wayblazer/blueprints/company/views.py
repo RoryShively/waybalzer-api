@@ -6,7 +6,8 @@ from wayblazer.extensions import api
 
 from wayblazer.blueprints.company.models import Company, Address
 from wayblazer.blueprints.company.schemas import (
-    company_schema, companies_schema, zipcode_schema, )
+    # company_schema,
+    companies_schema, zipcode_schema, )
 
 
 company = Blueprint('company', __name__, template_folder='templates')
@@ -28,8 +29,10 @@ class CompaniesListAPI(Resource):
     def get(self):
 
         parser = reqparse.RequestParser()
-        parser.add_argument('state', type=str, location='args', required=False)
-        parser.add_argument('employee_count', type=int, location='args', required=False)
+        parser.add_argument('state', type=str,
+                            location='args', required=False)
+        parser.add_argument('employee_count', type=int,
+                            location='args', required=False)
         args = parser.parse_args()
 
         companies = Company.query.join(Address)
@@ -55,7 +58,8 @@ class ZipcodeAPI(Resource):
 
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('state', type=str, location='args', required=False)
+        parser.add_argument('state', type=str,
+                            location='args', required=False)
         args = parser.parse_args()
 
         addresses = Address.query

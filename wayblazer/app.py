@@ -1,6 +1,6 @@
 from flask import Flask
 from celery import Celery
-from itsdangerous import URLSafeTimedSerializer
+# from itsdangerous import URLSafeTimedSerializer
 
 from wayblazer.blueprints.company import company
 from wayblazer.blueprints.page import page

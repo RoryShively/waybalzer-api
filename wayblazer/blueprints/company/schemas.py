@@ -19,6 +19,7 @@ class CompanySchema(ma.Schema):
     class Meta:
         fields = ('id', 'name', 'web', 'phone', 'addresses', )
 
+
 company_schema = CompanySchema()
 companies_schema = CompanySchema(many=True)
 

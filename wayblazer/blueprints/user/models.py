@@ -33,7 +33,8 @@ class User(UserMixin, ResourceMixin, db.Model):
     active = db.Column('is_active', db.Boolean(), nullable=False,
                        server_default='1')
     username = db.Column(db.String(24), unique=True, index=True)
-    email = db.Column(db.String(255), unique=True, index=True, nullable=False,
+    email = db.Column(db.String(255), unique=True,
+                      index=True, nullable=False,
                       server_default='')
     password = db.Column(db.String(128), nullable=False, server_default='')
 
@@ -166,7 +167,8 @@ class User(UserMixin, ResourceMixin, db.Model):
         """
         private_key = current_app.config['SECRET_KEY']
 
-        serializer = TimedJSONWebSignatureSerializer(private_key, expiration)
+        serializer = TimedJSONWebSignatureSerializer(private_key,
+                                                     expiration)
         return serializer.dumps({'user_email': self.email}).decode('utf-8')
 
     def update_activity_tracking(self, ip_address):
@@ -187,4 +189,3 @@ class User(UserMixin, ResourceMixin, db.Model):
         self.current_sign_in_ip = ip_address
 
         return self.save()
-
