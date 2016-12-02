@@ -54,6 +54,7 @@ From here you should:
  _password: asdfasdf_
  
  - Reset the database
+ 
  `docker-compose exec website wayblazer db reset`
  
  _clears the database, runs init, then runs seed_
