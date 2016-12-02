@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9312c8c-f0db-4904-8686-845f83e5aefd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/util_pagination.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" afterPath="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
     </list>
@@ -56,10 +57,10 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="335">
-                  <caret line="113" column="15" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
+                <state relative-caret-position="1260">
+                  <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
                   <folding>
-                    <element signature="e#0#9#0" expanded="true" />
+                    <element signature="e#0#35#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -132,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cli/commands/cmd_test.py" />
         <option value="$PROJECT_DIR$/cli/commands/cmd_cov.py" />
         <option value="$PROJECT_DIR$/cli/cli.py" />
         <option value="$PROJECT_DIR$/Wayblazer_CLI.egg-info/entry_points.txt" />
@@ -182,6 +182,7 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/models.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/views.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/employee.sql" />
+        <option value="$PROJECT_DIR$/lib/lib_pagination.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
       </list>
     </option>
@@ -338,6 +339,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -733,14 +748,21 @@
       <option name="project" value="LOCAL" />
       <updated>1480632121629</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added pagination to employees">
+      <created>1480652080811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480652080811</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -776,7 +798,8 @@
     <MESSAGE value="functionally complete" />
     <MESSAGE value="separated schemas from views" />
     <MESSAGE value="fixed employee count query for companies" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed employee count query for companies" />
+    <MESSAGE value="added pagination to employees" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pagination to employees" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,7 +816,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/user/templates/user/mail/password_reset.txt" />
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/user/validations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1174,12 +1196,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/util_pagination.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="113" column="15" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
+        <state relative-caret-position="1260">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

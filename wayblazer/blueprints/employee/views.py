@@ -1,9 +1,10 @@
-import re
 from collections import OrderedDict
 
 from flask import Blueprint
 from flask_restful import Resource, reqparse
 from sqlalchemy.sql import func
+
+from lib.util_pagination import build_next_url, build_previous_url
 
 from wayblazer.extensions import api, ma
 
@@ -29,8 +30,6 @@ employee = Blueprint('employee', __name__, template_folder='templates')
 class EmployeesListAPI(Resource):
     def get(self):
 
-        # TODO: offset and limit has to be positive
-        # TODO: show total entrees in results
         # TODO: limit url links to positive #'s
         # TODO: fix duplicate phone number problem
 
@@ -83,56 +82,6 @@ class EmployeesListAPI(Resource):
             "count": employees_count,
             "results": results.data
         })
-
-
-def build_previous_url(resource, args, limit, offset):
-    if offset - limit < 0:
-        return None
-
-    url = api.url_for(resource, _external=True)
-    limit = limit
-    offset = offset - limit
-
-    params = []
-    for arg in args:
-        print(arg)
-        if args.get(arg) and (arg not in ['limit', 'offset']):
-            value = re.sub(' ', '+', str(args.get(arg)))
-            params.append('{}={}'.format(arg, value))
-
-    params.append('limit={}'.format(limit))
-    params.append('offset={}'.format(offset))
-
-    print(params)
-
-    params = '&'.join(params)
-
-    return '{}?{}'.format(url, params)
-
-
-def build_next_url(resource, args, limit, offset, count):
-    if offset + limit > count:
-        return None
-
-    url = api.url_for(resource, _external=True)
-    limit = limit
-    offset = offset + limit
-
-    params = []
-    for arg in args:
-        print(arg)
-        if args.get(arg) and (arg not in ['limit', 'offset']):
-            value = re.sub(' ', '+', str(args.get(arg)))
-            params.append('{}={}'.format(arg, value))
-
-    params.append('limit={}'.format(limit))
-    params.append('offset={}'.format(offset))
-
-    print(params)
-
-    params = '&'.join(params)
-
-    return '{}?{}'.format(url, params)
 
 
 class EmployeeAPI(Resource):
