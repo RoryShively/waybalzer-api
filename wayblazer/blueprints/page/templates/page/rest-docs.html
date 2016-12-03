@@ -17,6 +17,9 @@
                         <a href="#employees">Employees</a>
                     </li>
                     <li>
+                        <a href="#duplicate_numbers">Duplicate Numbers</a>
+                    </li>
+                    <li>
                         <a href="#companies">Companies</a>
                     </li>
                     <li>
@@ -29,6 +32,12 @@
 
             {# Main Content. #}
             <div class="col-md-9 col-md-offset-3 api-docs" id="api-docs" data-spy="scroll" data-target="#api-nav">
+
+
+
+{#                EMPLOYEES#}
+
+
 
                 <div class="api-doc" id="employees">
 
@@ -44,23 +53,23 @@
                         <h4>Parameters:</h4>
                         <ul>
                             <li>
-                                <b>Company</b>
+                                <b>company</b>
                                 <p>Filters by company employee is associated with</p>
                             </li>
                             <li>
-                                <b>Exclude State</b>
+                                <b>exclude_state</b>
                                 <p>Excludes employees from a certain state (i.e. TX, LA, CA)</p>
                             </li>
                             <li>
-                                <b>Email Provider</b>
+                                <b>email_provider</b>
                                 <p>Filters employees by their email provider (i.e. gmail, yahoo)</p>
                             </li>
                             <li>
-                                <b>Limit</b>
+                                <b>limit</b>
                                 <p>Selects the amount of employees you wish to list in the JSON response (default: 10)</p>
                             </li>
                             <li>
-                                <b>Offset</b>
+                                <b>offset</b>
                                 <p>Selects the amount of employees you wish to offset in the response (default: 0)</p>
                             </li>
                         </ul>
@@ -160,24 +169,367 @@
 
                 </div>
 
-                <div class="api-doc" id="companies">
-                    <h2>Companies</h2>
+
+
+
+
+{#                DUPLICATE NUMBERS#}
+
+
+
+
+
+                <div class="api-doc" id="duplicate_numbers">
+
+                    <h2>Duplicate Numbers</h2>
+
                     <hr>
-                    <p>
-                        <span>Lordem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque, autem consequatur dolorem dolorum, error esse est, fuga fugiat harum illum magnam possimus quibusdam quod quos reiciendis sapiente temporibus voluptatem.</span><span>Accusamus, amet asperiores corporis cum dolor enim facilis id ipsa iure non, nulla optio pariatur placeat quasi, quidem rerum saepe sed similique sit temporibus? Aliquid architecto delectus doloremque et officiis.</span><span>Adipisci aliquam aliquid animi, aperiam at dignissimos dolore dolorum ducimus fugit hic illum incidunt minus, molestiae odit officia officiis omnis pariatur provident quam qui rem reprehenderit sequi velit veritatis voluptatum?</span><span>Ducimus illo obcaecati quibusdam recusandae sed sequi vero voluptas? Architecto assumenda corporis cum cupiditate esse, est impedit ipsam quas quibusdam quos repellat saepe! Accusantium animi est illum labore molestias. Alias?</span><span>A aliquid, animi asperiores aspernatur, at atque beatae commodi dolor est hic inventore iusto laborum magnam maiores minus molestiae nisi nostrum praesentium quisquam quos reiciendis rerum temporibus ut! Assumenda, porro?</span><span>Accusamus, assumenda autem distinctio eligendi facere fuga inventore quaerat repellendus voluptas. Architecto culpa, ducimus eaque est et id ipsa, labore necessitatibus nostrum nulla obcaecati porro quos tempore unde veniam voluptatibus?</span><span>Ab aliquid aspernatur atque earum eius, eligendi eum exercitationem fugiat harum id incidunt ipsum labore laboriosam molestiae perferendis quod reiciendis sit, soluta ullam unde velit voluptas voluptatum! Sed tempora, tenetur?</span><span>A cum cumque delectus distinctio dolorem eaque earum explicabo facere harum inventore, nesciunt perspiciatis quas quis quisquam rem sit soluta tempora vel, velit, voluptatibus! Aliquam aperiam asperiores cum laboriosam repellendus.</span><span>Ab dolorum ea exercitationem fuga illum minima natus pariatur reiciendis, saepe tempora? Alias dolore dolorum earum fugiat minus modi mollitia possimus quae qui repudiandae similique, tempore temporibus, velit veritatis vitae?</span><span>A consequuntur explicabo fugiat iure mollitia numquam odio porro quia quis quos ratione recusandae, reprehenderit saepe vel voluptates! Ab, accusantium corporis fugit maiores molestias nesciunt possimus vitae? Animi, est, incidunt.</span>
-                    </p>
+
+                    <div class="endpoint">
+                        <code>localhost:8000/api/duplicate_numbers</code>
+                    </div>
+
+                    <div class="parameters">
+                        <h4>Parameters:</h4>
+                        <ul>
+                            <li>
+                                <b>limit</b>
+                                <p>Selects the amount of employees you wish to list in the JSON response (default: 10)</p>
+                            </li>
+                            <li>
+                                <b>offset</b>
+                                <p>Selects the amount of employees you wish to offset in the response (default: 0)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <div class="well">
+                            <h5>Search Phone Numbers with Multiple Employees</h5>
+                            <p>
+                                This is a specialized endpoint that searches through phone numbers and returns any that have more than one employee associated with them.
+                            </p>
+                            <code>GET</code> <code>localhost:8000/api/duplicate_numbers</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 2,
+  "next": null,
+  "pages": 0,
+  "previous": null,
+  "results": [
+    {
+      "employees": [
+        {
+          "email": "jbutt@gmail.com",
+          "first_name": "James",
+          "id": 1,
+          "last_name": "Butt"
+        },
+        {
+          "email": "josephine_darakjy@darakjy.org",
+          "first_name": "Josephine",
+          "id": 2,
+          "last_name": "Darakjy"
+        },
+        {
+          "email": "art@venere.org",
+          "first_name": "Art",
+          "id": 3,
+          "last_name": "Venere"
+        },
+        {
+          "email": "lpaprocki@hotmail.com",
+          "first_name": "Lenna",
+          "id": 4,
+          "last_name": "Paprocki"
+        },
+        {
+          "email": "donette.foller@cox.net",
+          "first_name": "Donette",
+          "id": 5,
+          "last_name": "Foller"
+        },
+        {
+          "email": "simona@morasca.com",
+          "first_name": "Simona",
+          "id": 6,
+          "last_name": "Morasca"
+        },
+        {
+          "email": "mitsue_tollner@yahoo.com",
+          "first_name": "Mitsue",
+          "id": 7,
+          "last_name": "Tollner"
+        },
+        {
+          "email": "leota@hotmail.com",
+          "first_name": "Leota",
+          "id": 8,
+          "last_name": "Dilliard"
+        }
+      ],
+      "id": 1,
+      "number": "504-845-1427"
+    },
+    {
+      "employees": [
+        {
+          "email": "hubert@walthall.org",
+          "first_name": "Hubert",
+          "id": 406,
+          "last_name": "Walthall"
+        },
+        {
+          "email": "arthur.farrow@yahoo.com",
+          "first_name": "Arthur",
+          "id": 407,
+          "last_name": "Farrow"
+        }
+      ],
+      "id": 399,
+      "number": "330-566-8898"
+    }
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
                 </div>
+
+
+
+
+{#                COMPANIES#}
+
+
+
+
+
+                <div class="api-doc" id="companies">
+
+                    <h2>Companies</h2>
+
+                    <hr>
+
+                    <div class="endpoint">
+                        <code>localhost:8000/api/companies</code>
+                    </div>
+
+                    <div class="parameters">
+                        <h4>Parameters:</h4>
+                        <ul>
+                            <li>
+                                <b>employee_count</b>
+                                <p>Filters companies based on the number of employees they have</p>
+                            </li>
+                            <li>
+                                <b>state</b>
+                                <p>filter companies based on which state their in</p>
+                            </li>
+                            <li>
+                                <b>limit</b>
+                                <p>Selects the amount of employees you wish to list in the JSON response (default: 10)</p>
+                            </li>
+                            <li>
+                                <b>offset</b>
+                                <p>Selects the amount of employees you wish to offset in the response (default: 0)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <div class="well">
+                            <h5>Search companies based on state.</h5>
+                            <p>
+                                This endpoint filters companies that are from TX
+                            </p>
+                            <code>GET</code> <code>localhost:8000/api/company?state=TX</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 24,
+  "next": "http://localhost:8000/api/company?state=TX&limit=10&offset=10",
+  "pages": 2,
+  "previous": null,
+  "results": [
+    {
+      "addresses": [
+        {
+          "city": "Dallas",
+          "county": "Dallas",
+          "id": 18,
+          "route": "627 Walford Ave",
+          "state": "TX",
+          "zip": "75227"
+        }
+      ],
+      "id": 18,
+      "name": "Ninas Indian Grs & Videos",
+      "phone": "214-339-1809",
+      "web": "http://www.ninasindiangrsvideos.com"
+    },
+    {
+      "addresses": [
+        {
+          "city": "Waco",
+          "county": "McLennan",
+          "id": 22,
+          "route": "8927 Vandever Ave",
+          "state": "TX",
+          "zip": "76707"
+        }
+      ],
+      "id": 22,
+      "name": "Admiral Party Rentals & Sales",
+      "phone": "254-463-4368",
+      "web": "http://www.admiralpartyrentalssales.com"
+    },
+    ...
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="well">
+                            <h5>Search companies based on employee count.</h5>
+                            <p>
+                                This endpoint filters companies that have exactly 3 employees.
+                            </p>
+                            <code>GET</code> <code>localhost:8000/api/company?employee_count=3</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 2,
+  "next": null,
+  "pages": 0,
+  "previous": null,
+  "results": [
+    {
+      "addresses": [
+        {
+          "city": "Ontario",
+          "county": "San Bernardino",
+          "id": 6,
+          "route": "52777 Leaders Heights Rd",
+          "state": "CA",
+          "zip": "91761"
+        }
+      ],
+      "id": 6,
+      "name": "Biltmore Investors Bank",
+      "phone": "909-639-9887",
+      "web": "http://www.biltmoreinvestorsbank.com"
+    },
+    {
+      "addresses": [
+        {
+          "city": "Clarks Summit",
+          "county": "Lackawanna",
+          "id": 7,
+          "route": "83 County Road 437 #8581",
+          "state": "PA",
+          "zip": "18411"
+        }
+      ],
+      "id": 7,
+      "name": "Bailey Cntl Co Div Babcock",
+      "phone": "570-867-7489",
+      "web": "http://www.baileycntlcodivbabcock.com"
+    }
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+{#                ZIPCODES#}
+
+
+
+
 
                 <div class="api-doc" id="zipcodes">
-                    <h2>Zipcodes</h2>
-                    <hr>
-                    <p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi doloribus esse explicabo illo in magni possimus quasi tenetur unde voluptatem. Accusantium adipisci cumque eos facilis omnis possimus quae, vero. Nemo?</span><span>Debitis eligendi exercitationem praesentium quo repudiandae suscipit! A accusantium ad cum cupiditate deserunt dolorum ea eos esse facere, fugit ipsa iste laudantium magni molestias necessitatibus odit recusandae rerum similique voluptate.</span><span>Doloremque illum molestias perferendis quisquam voluptate. Ad autem beatae consequatur cumque dicta dolorem ducimus et ex inventore iusto maxime molestias odio, omnis perspiciatis possimus quaerat quasi quo quos tempora, vitae.</span><span>Culpa cumque cupiditate dignissimos dolore doloribus error inventore ipsa laborum minus placeat quod saepe, sapiente similique totam ullam velit voluptatem voluptates? Alias aperiam architecto cum dolor ipsa nemo, nihil officia.</span><span>Blanditiis commodi consequatur deserunt dignissimos dolores eius esse eum fuga fugit modi natus, nemo, numquam odit perspiciatis ratione reiciendis repudiandae rerum saepe sapiente suscipit tenetur velit veniam? Iure nesciunt, ullam.</span><span>Magni, nisi nostrum? Ad aspernatur autem, beatae consectetur delectus ducimus eum inventore nemo nostrum possimus quos, rerum saepe sapiente soluta sunt tempore vero! Assumenda corporis culpa ex hic repudiandae totam?</span><span>Adipisci autem deleniti dolorem, doloribus est, illum ipsa laboriosam laudantium molestiae natus nobis provident quae quia quod sed vero voluptatem! Corporis dolor laborum mollitia pariatur sequi. Corporis explicabo laboriosam odio.</span><span>Animi deleniti dicta doloribus eligendi error excepturi expedita hic, magnam maiores mollitia perspiciatis placeat quaerat quod tempora, totam vero vitae. Eum expedita odit officiis recusandae sunt velit? Ex maiores, repudiandae.</span><span>Adipisci animi atque culpa cumque deserunt eligendi error eveniet excepturi id, illum ipsam iste magni minus nemo neque nesciunt, omnis optio quae quas recusandae repudiandae saepe tenetur voluptates? Blanditiis, cum.</span><span>Aliquid eos, fugit inventore libero non sapiente sit vero. Ex laudantium odit, qui quis repellendus sit unde veniam voluptate. Hic, labore, nisi. Assumenda culpa esse minus non quas! Et, repudiandae!</span>
-                    </p>
-                </div>
 
-                <div class="api-img" id="e">
-                    <img src="http://lostriverweb.com/rest-presentation/images/yodawg_restful.jpg" alt="">
+                    <h2>Zipcodes</h2>
+
+                    <hr>
+
+                    <div class="endpoint">
+                        <code>localhost:8000/api/zipcode</code>
+                    </div>
+
+                    <div class="parameters">
+                        <h4>Parameters:</h4>
+                        <ul>
+                            <li>
+                                <b>state</b>
+                                <p>Selects the state you wish to search in.</p>
+                            </li>
+                            <li>
+                                <b>limit</b>
+                                <p>Selects the amount of employees you wish to list in the JSON response (default: 10)</p>
+                            </li>
+                            <li>
+                                <b>offset</b>
+                                <p>Selects the amount of employees you wish to offset in the response (default: 0)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <div class="well">
+                            <h5>Search Zipcodes based on state</h5>
+                            <p>
+                                This is a specialized endpoint that searches through addresses and returns zipcodes from certain states. The limit was set to 5 on this endpoint.
+                            </p>
+                            <code>GET</code> <code>localhost:8000/api/zipcode?state=CA&limit=5</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 53,
+  "next": "http://localhost:8000/api/zipcode?state=CA&limit=5&offset=5",
+  "pages": 10,
+  "previous": null,
+  "results": [
+    {
+      "zip": "91761"
+    },
+    {
+      "zip": "92501"
+    },
+    {
+      "zip": "90212"
+    },
+    {
+      "zip": "95827"
+    },
+    {
+      "zip": "94710"
+    }
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

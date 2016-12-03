@@ -27,6 +27,6 @@ class PersonalPhone(ResourceMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     employees = db.relationship('Employee', backref='phone',
-                                lazy='joined')
+                                lazy='dynamic')
 
     number = db.Column(db.String(24), nullable=False, server_default='')

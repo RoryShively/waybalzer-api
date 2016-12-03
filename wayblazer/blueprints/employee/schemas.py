@@ -24,5 +24,15 @@ class EmployeeSchema(ma.Schema):
                   'email', 'number', 'company')
 
 
+class PhoneSchema(ma.Schema):
+    employees = fields.Nested(EmployeeSchema, many=True,
+                              exclude=('number', 'company', ))
+
+    class Meta:
+        fields = ('id', 'number', 'employees', )
+
+
 employee_schema = EmployeeSchema()
 employees_schema = EmployeeSchema(many=True)
+
+phone_schema = PhoneSchema(many=True)

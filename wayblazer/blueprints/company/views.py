@@ -2,12 +2,17 @@ from flask import Blueprint
 from flask_restful import Resource, reqparse
 from sqlalchemy.sql import func
 
+from lib.util_pagination import paginated_results
+
 from wayblazer.extensions import api
 
 from wayblazer.blueprints.company.models import Company, Address
+from wayblazer.blueprints.company.parsers import (
+    get_company_list_parser, get_zipcode_list_parser,
+)
 from wayblazer.blueprints.company.schemas import (
-    # company_schema,
-    companies_schema, zipcode_schema, )
+    companies_schema, zipcode_schema,
+)
 
 
 company = Blueprint('company', __name__, template_folder='templates')
@@ -28,12 +33,11 @@ class CompaniesListAPI(Resource):
 
     def get(self):
 
-        parser = reqparse.RequestParser()
-        parser.add_argument('state', type=str,
-                            location='args', required=False)
-        parser.add_argument('employee_count', type=int,
-                            location='args', required=False)
+        parser = get_company_list_parser()
         args = parser.parse_args()
+
+        limit = args.get('limit') if args.get('limit') else 10
+        offset = args.get('offset') if args.get('offset') else 0
 
         companies = Company.query.join(Address)
 
@@ -45,9 +49,18 @@ class CompaniesListAPI(Resource):
                 .group_by(Company) \
                 .having(func.count_(Company.employees) == 3)
 
-        companies = companies.all()
+        companies_query = companies.limit(limit).offset(offset)
 
-        return companies_schema.jsonify(companies)
+        companies_count = companies.count()
+
+        results = companies_schema.dump(companies_query)
+
+        return paginated_results(self,
+                                 results=results.data,
+                                 args=args,
+                                 limit=limit,  # Returns None
+                                 offset=offset,  # Returns None
+                                 count=companies_count)
 
 
 class CompanyAPI(Resource):
@@ -57,19 +70,30 @@ class CompanyAPI(Resource):
 class ZipcodeAPI(Resource):
 
     def get(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument('state', type=str,
-                            location='args', required=False)
+
+        parser = get_company_list_parser()
         args = parser.parse_args()
+
+        limit = args.get('limit') if args.get('limit') else 10
+        offset = args.get('offset') if args.get('offset') else 0
 
         addresses = Address.query
 
         if args.get('state'):
             addresses = addresses.filter(Address.state == args.get('state'))
 
-        addresses = addresses.all()
+        addresses_query = addresses.limit(limit).offset(offset)
 
-        return zipcode_schema.jsonify(addresses)
+        addresses_count = addresses.count()
+
+        results = zipcode_schema.dump(addresses_query)
+
+        return paginated_results(self,
+                                 results=results.data,
+                                 args=args,
+                                 limit=limit,  # Returns None
+                                 offset=offset,  # Returns None
+                                 count=addresses_count)
 
 
 api.add_resource(CompaniesListAPI, '/api/company', endpoint='companies')

@@ -1,26 +1,23 @@
-# from collections import OrderedDict
-
 from flask import Blueprint
 from flask_restful import Resource
-# from sqlalchemy.sql import func
+from sqlalchemy.sql import func
 
 from lib.util_pagination import paginated_results
 
 from wayblazer.extensions import api
 
 from wayblazer.blueprints.company.models import Company, Address
-from wayblazer.blueprints.employee.models import Employee
-from wayblazer.blueprints.employee.parsers import get_employees_list_parser
-from wayblazer.blueprints.employee.schemas import employees_schema
+from wayblazer.blueprints.employee.models import Employee, PersonalPhone
+from wayblazer.blueprints.employee.parsers import (
+    get_employees_list_parser, get_duplicate_number_list_parser,
+)
+from wayblazer.blueprints.employee.schemas import employees_schema, phone_schema
 
 employee = Blueprint('employee', __name__, template_folder='templates')
 
 
 class EmployeesListAPI(Resource):
     def get(self):
-
-        # TODO: limit url links to positive #'s
-        # TODO: fix duplicate phone number problem
 
         parser = get_employees_list_parser()
         args = parser.parse_args()
@@ -48,8 +45,7 @@ class EmployeesListAPI(Resource):
                         .like('%{}.com'.format(args.get('email_provider'))))
 
         # Paginate query based on offset and limit
-        employees_query = employees.limit(args.get('limit', 10)) \
-            .offset(args.get('offset', 0))
+        employees_query = employees.limit(limit).offset(offset)
 
         # Get the number of entrees in query before pagination
         # to get a running total
@@ -57,10 +53,6 @@ class EmployeesListAPI(Resource):
 
         # Dump results into the employees schema
         results = employees_schema.dump(employees_query)
-
-        # if args.get('duplicate_number') == 'true':
-        #     employees = [employee for employee in employees
-        #                  if len(employee.phone.employees) > 1]
 
         return paginated_results(self,
                                  results=results.data,
@@ -74,5 +66,35 @@ class EmployeeAPI(Resource):
     pass
 
 
+class DuplicateNumberAPI(Resource):
+    def get(self):
+
+        parser = get_duplicate_number_list_parser()
+        args = parser.parse_args()
+
+        limit = args.get('limit') if args.get('limit') else 10
+        offset = args.get('offset') if args.get('offset') else 0
+
+        phones = PersonalPhone.query \
+            .outerjoin(PersonalPhone.employees) \
+            .group_by(PersonalPhone) \
+            .having(func.count_(PersonalPhone.employees) > 1)
+
+        phones_query = phones.limit(limit).offset(offset)
+
+        phones_count = phones.count()
+
+        results = phone_schema.dump(phones_query)
+
+        return paginated_results(self,
+                                 results=results.data,
+                                 args=args,
+                                 limit=limit,  # Returns None
+                                 offset=offset,  # Returns None
+                                 count=phones_count)
+
+
 api.add_resource(EmployeesListAPI, '/api/employee', endpoint='employees')
 api.add_resource(EmployeeAPI, '/api/employee/<int:id>', endpoint='employee')
+
+api.add_resource(DuplicateNumberAPI, '/api/duplicate_numbers', endpoint='duplicate')
