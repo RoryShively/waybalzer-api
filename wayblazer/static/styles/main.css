@@ -100,3 +100,45 @@ p {
     background-color: #bb511e;
     border-color: #bb511e;
 }
+
+/* Rest Docs
+-------------------------------------------------- */
+
+.api-nav {
+    position: fixed;
+}
+
+.api-nav>ul {
+    list-style: none;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.api-nav>ul>li {
+    padding: 4px;
+    font-size: 16px;
+    border-left: solid #eee 3px;
+    color: #ccc
+}
+
+.api-nav>ul>li.active {
+    color: #ff6e27;
+    border-color: #ff6e27;
+}
+
+.api-nav>ul>li:hover {
+    color: #ff6e27;
+    cursor: pointer;
+}
+
+.api-docs {
+    text-align: left;
+}
+
+.api-doc {
+
+}
+
+.api-img {
+    padding: 80px 0;
+}
