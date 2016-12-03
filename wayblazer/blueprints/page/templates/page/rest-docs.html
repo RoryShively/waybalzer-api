@@ -10,31 +10,156 @@
             <h1>Rest Docs</h1>
 
             {# Side Navigation. #}
-            <div class="col-md-3 api-nav hidden-sm">
+            <div id="api-nav">
+            <div class="col-md-3 nav api-nav hidden-sm">
                 <ul>
-                    <li class="active">
-                        Employees
+                    <li>
+                        <a href="#employees">Employees</a>
                     </li>
                     <li>
-                        Companies
+                        <a href="#companies">Companies</a>
+                    </li>
                     <li>
-                        Zipcodes
+                        <a href="#zipcodes">Zipcodes</a>
                     </li>
                 </ul>
             </div>
+            </div>
 
             {# Main Content. #}
-            <div class="col-md-9 col-md-offset-3 api-docs">
+            <div class="col-md-9 col-md-offset-3 api-docs" id="api-docs" data-spy="scroll" data-target="#api-nav">
 
-                <div class="api-doc" id="employees-api-doc">
+                <div class="api-doc" id="employees">
+
                     <h2>Employees</h2>
+
                     <hr>
-                    <p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolore eos fuga ipsa. Corporis esse maxime minus pariatur quos vero? Culpa cum doloribus enim et expedita fugit ipsa nihil ratione.</span><span>Aperiam atque, aut autem culpa cupiditate delectus enim ex illum nihil non numquam, officiis placeat quibusdam saepe sunt velit veritatis voluptas! Architecto harum minima minus molestiae omnis, quam tempora vitae!</span><span>Ad aliquam amet dolor eaque earum eum excepturi expedita itaque, iure iusto laboriosam laudantium minus molestiae nulla officia officiis perferendis quam quas, quod ratione, reiciendis sunt vel? Cumque dolore, sequi.</span><span>Ab adipisci aliquam at aut autem consectetur culpa dicta dolor dolorem, ducimus est ex inventore iusto minima modi nemo nesciunt nihil, quaerat qui quibusdam quisquam ratione recusandae reiciendis sed veritatis!</span><span>A aspernatur at beatae deleniti dignissimos, dolorum et eveniet hic ipsam iste iure mollitia nobis, nulla, odio optio placeat possimus quae quasi quis sed similique totam velit voluptatem. Nulla, ut.</span><span>Consequatur consequuntur dolore dolorem eius, eligendi exercitationem explicabo facilis labore laboriosam magni minima nam natus nisi, nobis odit perferendis possimus qui quia sapiente sequi similique tempora unde voluptas voluptatibus voluptatum.</span><span>Blanditiis dignissimos earum eveniet facilis laboriosam nesciunt quasi quos ut. Adipisci at consequuntur deserunt dicta eaque fuga id iusto, laborum maxime, neque quod rem saepe similique velit vero vitae, voluptatibus!</span><span>Accusamus amet, animi architecto asperiores autem consectetur dolorem doloremque error inventore itaque iusto magni minima nulla, perspiciatis porro qui quia, quibusdam quis rem reprehenderit repudiandae saepe suscipit ut vel veritatis.</span><span>Accusantium corporis earum illo mollitia nemo unde velit! Corporis culpa facilis itaque iusto maxime obcaecati perferendis repellendus reprehenderit sequi tempore? Consequuntur culpa dolores earum excepturi facere fuga fugit magnam voluptatibus!</span><span>Accusamus adipisci amet asperiores consequatur eius est, exercitationem explicabo, impedit itaque laudantium maxime minima numquam odit quis quo reiciendis sapiente. A, beatae exercitationem? Aut facere quisquam, quo reiciendis soluta velit.</span>
-                    </p>
+
+                    <div class="endpoint">
+                        <code>localhost:8000/api/employee</code>
+                    </div>
+
+                    <div class="parameters">
+                        <h4>Parameters:</h4>
+                        <ul>
+                            <li>
+                                <b>Company</b>
+                                <p>Filters by company employee is associated with</p>
+                            </li>
+                            <li>
+                                <b>Exclude State</b>
+                                <p>Excludes employees from a certain state (i.e. TX, LA, CA)</p>
+                            </li>
+                            <li>
+                                <b>Email Provider</b>
+                                <p>Filters employees by their email provider (i.e. gmail, yahoo)</p>
+                            </li>
+                            <li>
+                                <b>Limit</b>
+                                <p>Selects the amount of employees you wish to list in the JSON response (default: 10)</p>
+                            </li>
+                            <li>
+                                <b>Offset</b>
+                                <p>Selects the amount of employees you wish to offset in the response (default: 0)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <div class="well">
+                            <h5>Searching by company</h5>
+                            <p>
+                                This endpoint searches for employees in the "Rapid Trading Intl" company with a result limit of 10 employees per request and starting on the 21st employee. Offset and Limit are explicitly set.
+                            </p>
+                            <code>GET</code> <code>localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=20</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 70,
+  "next": "http://localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=30",
+  "pages": 7,
+  "previous": "http://localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=10",
+  "results": [
+    {
+      "company": {
+        "addresses": [
+          {
+            "city": "Fairbanks",
+            "county": "Fairbanks North Star",
+            "id": 4,
+            "route": "1048 Main St",
+            "state": "AK",
+            "zip": "99708"
+          }
+        ],
+        "id": 4,
+        "name": "Rapid Trading Intl",
+        "phone": "907-231-4722",
+        "web": "http://www.rapidtradingintl.com"
+      },
+      "email": "cecily@hollack.org",
+      "first_name": "Cecily",
+      "id": 63,
+      "last_name": "Hollack",
+      "number": "512-861-3814"
+    },
+    ...
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="well">
+                            <h5>Excluding a state and filtering by email provider</h5>
+                            <p>
+                                This endpoint searches for employees not in the state of TX with a yahoo email account.
+                            </p>
+                            <code>GET</code> <code>http://localhost:8000/api/employee?exclude_state=TX&email_provider=yahoo</code>
+                            <br>
+                            <pre>
+                                <code>
+{
+  "count": 82,
+  "next": "http://localhost:8000/api/employee?exclude_state=TX&email_provider=yahoo&limit=10&offset=10",
+  "pages": 8,
+  "previous": null,
+  "results": [
+    {
+      "company": {
+        "addresses": [
+          {
+            "city": "New Orleans",
+            "county": "Orleans",
+            "id": 1,
+            "route": "6649 N Blue Gum St",
+            "state": "LA",
+            "zip": "70116"
+          }
+        ],
+        "id": 1,
+        "name": "Benton, John B Jr",
+        "phone": "504-621-8927",
+        "web": "http://www.bentonjohnbjr.com"
+      },
+      "email": "mitsue_tollner@yahoo.com",
+      "first_name": "Mitsue",
+      "id": 7,
+      "last_name": "Tollner",
+      "number": "504-845-1427"
+    },
+    ...
+  ]
+}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="api-doc" id="companies-api-doc">
+                <div class="api-doc" id="companies">
                     <h2>Companies</h2>
                     <hr>
                     <p>
@@ -42,7 +167,7 @@
                     </p>
                 </div>
 
-                <div class="api-doc" id="zipcode-api-doc">
+                <div class="api-doc" id="zipcodes">
                     <h2>Zipcodes</h2>
                     <hr>
                     <p>

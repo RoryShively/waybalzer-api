@@ -118,17 +118,23 @@ p {
     padding: 4px;
     font-size: 16px;
     border-left: solid #eee 3px;
-    color: #ccc
+}
+
+.api-nav>ul>li>a {
+    color: #ccc;
+    text-decoration: none;
 }
 
 .api-nav>ul>li.active {
-    color: #ff6e27;
     border-color: #ff6e27;
 }
 
-.api-nav>ul>li:hover {
+.api-nav>ul>li.active>a {
     color: #ff6e27;
-    cursor: pointer;
+}
+
+.api-nav>ul>li>a:hover {
+    color: #ff6e27;
 }
 
 .api-docs {
@@ -136,7 +142,47 @@ p {
 }
 
 .api-doc {
+    padding: 80px 0;
+}
 
+.endpoint {
+    margin: 10px 0;
+}
+
+.endpoint code {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.parameters {
+    margin-top: 30px;
+}
+
+.parameters ul {
+    list-style: none;
+}
+
+.examples {
+    margin-top: 30px;
+}
+
+.examples h5 {
+    font-size: 20px;
+}
+
+.examples p {
+    font-style: italic;
+}
+
+.examples pre {
+    border: none;
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+}
+
+.examples pre>code {
+    color: #11939A;
 }
 
 .api-img {
