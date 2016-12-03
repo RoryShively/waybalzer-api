@@ -30,14 +30,14 @@
     <favorites_list name="app" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.20549242">
+    <splitter split-orientation="horizontal" split-proportion="0.46117425">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wayblazer/static/styles/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="169" column="19" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -53,11 +53,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-145">
-                  <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+                <state relative-caret-position="555">
+                  <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
                   <folding>
                     <element signature="e#39#66#0" expanded="true" />
                   </folding>
@@ -69,11 +69,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="rest-docs.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="rest-docs.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="72" column="208" selection-start-line="72" selection-start-column="208" selection-end-line="72" selection-end-column="208" />
+                <state relative-caret-position="135">
+                  <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/wayblazer/static/scripts/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -146,7 +156,6 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/user/models.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/parsers.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/schemas.py" />
-        <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/tasks.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/user/forms.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/views.py" />
@@ -154,10 +163,11 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" />
         <option value="$PROJECT_DIR$/wayblazer/templates/layouts/app.html" />
         <option value="$PROJECT_DIR$/wayblazer/templates/layouts/base.html" />
-        <option value="$PROJECT_DIR$/wayblazer/static/scripts/main.js" />
         <option value="$PROJECT_DIR$/wayblazer/todo.txt" />
-        <option value="$PROJECT_DIR$/wayblazer/static/styles/main.css" />
+        <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/views.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
+        <option value="$PROJECT_DIR$/wayblazer/static/styles/main.css" />
+        <option value="$PROJECT_DIR$/wayblazer/static/scripts/main.js" />
       </list>
     </option>
   </component>
@@ -1066,7 +1076,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480786421967</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="finished rest-api layout">
+      <created>1480792232358</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1480792232358</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1118,7 +1135,8 @@
     <MESSAGE value="pep8ified and created pages for rest-docs and questions" />
     <MESSAGE value="updates to rest docs and questions pages" />
     <MESSAGE value="layout for rest-api page complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout for rest-api page complete" />
+    <MESSAGE value="finished rest-api layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished rest-api layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1483,14 +1501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/static/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/templates/layouts/app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1503,14 +1513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1533,28 +1535,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wayblazer/static/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="169" column="19" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/employee/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        <state relative-caret-position="555">
+          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding>
             <element signature="e#39#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/static/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="72" column="208" selection-start-line="72" selection-start-column="208" selection-end-line="72" selection-end-column="208" />
+        <state relative-caret-position="135">
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wayblazer/static/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>

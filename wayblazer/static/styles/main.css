@@ -20,6 +20,10 @@ body {
     height: 60px;
 }
 
+.off-screen {
+    margin-left: -2000px;
+}
+
 /* Margin and padding
 -------------------------------------------------- */
 .lg-margin-bottom {
