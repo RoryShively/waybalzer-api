@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9312c8c-f0db-4904-8686-845f83e5aefd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/questions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" afterPath="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +29,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="1290">
+                <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/company/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="675">
@@ -108,7 +122,6 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/company.sql" />
         <option value="$PROJECT_DIR$/lib/lib_pagination.py" />
         <option value="$PROJECT_DIR$/lib/util_pagination.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/models.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/schemas.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/company/states.py" />
@@ -132,6 +145,7 @@
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/rest-docs.html" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/employee/models.py" />
         <option value="$PROJECT_DIR$/wayblazer/blueprints/page/templates/page/home.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1087,7 +1101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480802822613</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="updated home page">
+      <created>1480893837760</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1480893837760</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1142,7 +1163,8 @@
     <MESSAGE value="finished rest-api layout" />
     <MESSAGE value="*bug fix* spy scroll" />
     <MESSAGE value="finished rest api content and views" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished rest api content and views" />
+    <MESSAGE value="updated home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated home page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1282,20 +1304,6 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="450">
-            <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1592,6 +1600,20 @@
         <state relative-caret-position="675">
           <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1290">
+            <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
