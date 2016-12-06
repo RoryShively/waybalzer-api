@@ -1,1 +1,1 @@
-SERVER_NAME = 'ec2-107-21-183-126.compute-1.amazonaws.com:8000/'
+SERVER_NAME = '0.0.0.0:8000/'
