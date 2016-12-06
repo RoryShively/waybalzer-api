@@ -95,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="18" />
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -836,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481053839913</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="forward to 8000">
+      <created>1481053874911</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1481053874911</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -895,7 +902,8 @@
     <MESSAGE value="final changes" />
     <MESSAGE value="new server name" />
     <MESSAGE value="forward to 80/443" />
-    <option name="LAST_COMMIT_MESSAGE" value="forward to 80/443" />
+    <MESSAGE value="forward to 8000" />
+    <option name="LAST_COMMIT_MESSAGE" value="forward to 8000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1284,7 +1292,7 @@
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="18" />
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding />
         </state>
       </provider>
