@@ -22,8 +22,7 @@ services:
     build: .
     restart: always
     command: >
-      gunicorn -b 0.0.0.0:8000
-        --access-logfile -
+      gunicorn -c "python:config.gunicorn"
         --reload
         "wayblazer.app:create_app()"
     env_file:
@@ -32,7 +31,6 @@ services:
       - '.:/wayblazer'
     ports:
       - '8000:8000'
-      - '3000:3000'
 
   celery:
     build: .
