@@ -1,4 +1,4 @@
-.cache
+.cache/
 .coverage
 .DS_Store
-.idea
+.idea/
