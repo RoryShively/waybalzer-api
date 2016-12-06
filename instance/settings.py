@@ -1,1 +1,1 @@
-SERVER_NAME = 'wayblazer.com'
+SERVER_NAME = 'ec2-107-21-183-126.compute-1.amazonaws.com:8000/'
