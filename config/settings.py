@@ -3,7 +3,7 @@ from datetime import timedelta
 DEBUG = True
 DEBUG_TB_INTERCEPT_REDIRECTS = False
 
-SERVER_NAME = '0.0.0.0'
+SERVER_NAME = None
 SECRET_KEY = 'secret'
 
 # CELERY.
