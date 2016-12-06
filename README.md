@@ -30,7 +30,7 @@ This project has been tested using:
 
     `docker-compose exec website wayblazer db init`
 
-6. Open up your browser and go to `localhost:8000`
+6. Open up your browser and go to the website
 
 #### From here you should:
  - Click Sign Up in the top right corner to create an account
@@ -79,19 +79,19 @@ This project has been tested using:
  
 ## REST docs and Interview questions
 
-View REST API docs at `localhost:8000/rest-docs` 
+View REST API docs at `<base_url>/rest-docs` 
 
 
 
  
 <!--Who works for Rapid Trading Intl?-->
-  <!--localhost:8000/api/employee?company=Rapid%20Trading%20Intl-->
+  <!--<base_url>/api/employee?company=Rapid%20Trading%20Intl-->
 
 <!--Do any employees have the same personal phone number? 504-845-1427-->
-  <!--localhost:8000/api/employee?duplicate_number=true-->
+  <!--<base_url>/api/employee?duplicate_number=true-->
 
 <!--Bonus: Find all employees with a personal Gmail email address but exclude-->
  <!--anyone from CA.-->
-  <!--localhost:8000/api/employee?email_provider=gmail&exclude_state=CA-->
+  <!--<base_url>/api/employee?email_provider=gmail&exclude_state=CA-->
 
 

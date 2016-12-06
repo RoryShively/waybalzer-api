@@ -46,7 +46,7 @@
                     <hr>
 
                     <div class="endpoint">
-                        <code>localhost:8000/api/employee</code>
+                        <code>&lt;base_url&gt;/api/employee</code>
                     </div>
 
                     <div class="parameters">
@@ -82,15 +82,15 @@
                             <p>
                                 This endpoint searches for employees in the "Rapid Trading Intl" company with a result limit of 10 employees per request and starting on the 21st employee. Offset and Limit are explicitly set.
                             </p>
-                            <code>GET</code> <code>localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=20</code>
+                            <code>GET</code> <code>&lt;base_url&gt;/api/employee?company=Rapid+Trading+Intl&limit=10&offset=20</code>
                             <br>
                             <pre>
                                 <code>
 {
   "count": 70,
-  "next": "http://localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=30",
+  "next": "http://&lt;base_url&gt;/api/employee?company=Rapid+Trading+Intl&limit=10&offset=30",
   "pages": 7,
-  "previous": "http://localhost:8000/api/employee?company=Rapid+Trading+Intl&limit=10&offset=10",
+  "previous": "http://&lt;base_url&gt;/api/employee?company=Rapid+Trading+Intl&limit=10&offset=10",
   "results": [
     {
       "company": {
@@ -126,13 +126,13 @@
                             <p>
                                 This endpoint searches for employees not in the state of TX with a yahoo email account.
                             </p>
-                            <code>GET</code> <code>http://localhost:8000/api/employee?exclude_state=TX&email_provider=yahoo</code>
+                            <code>GET</code> <code>http://&lt;base_url&gt;/api/employee?exclude_state=TX&email_provider=yahoo</code>
                             <br>
                             <pre>
                                 <code>
 {
   "count": 82,
-  "next": "http://localhost:8000/api/employee?exclude_state=TX&email_provider=yahoo&limit=10&offset=10",
+  "next": "http://&lt;base_url&gt;/api/employee?exclude_state=TX&email_provider=yahoo&limit=10&offset=10",
   "pages": 8,
   "previous": null,
   "results": [
@@ -186,7 +186,7 @@
                     <hr>
 
                     <div class="endpoint">
-                        <code>localhost:8000/api/duplicate_numbers</code>
+                        <code>&lt;base_url&gt;/api/duplicate_numbers</code>
                     </div>
 
                     <div class="parameters">
@@ -210,7 +210,7 @@
                             <p>
                                 This is a specialized endpoint that searches through phone numbers and returns any that have more than one employee associated with them.
                             </p>
-                            <code>GET</code> <code>localhost:8000/api/duplicate_numbers</code>
+                            <code>GET</code> <code>&lt;base_url&gt;/api/duplicate_numbers</code>
                             <br>
                             <pre>
                                 <code>
@@ -317,7 +317,7 @@
                     <hr>
 
                     <div class="endpoint">
-                        <code>localhost:8000/api/companies</code>
+                        <code>&lt;base_url&gt;/api/companies</code>
                     </div>
 
                     <div class="parameters">
@@ -349,13 +349,13 @@
                             <p>
                                 This endpoint filters companies that are from TX
                             </p>
-                            <code>GET</code> <code>localhost:8000/api/company?state=TX</code>
+                            <code>GET</code> <code>&lt;base_url&gt;/api/company?state=TX</code>
                             <br>
                             <pre>
                                 <code>
 {
   "count": 24,
-  "next": "http://localhost:8000/api/company?state=TX&limit=10&offset=10",
+  "next": "http://&lt;base_url&gt;/api/company?state=TX&limit=10&offset=10",
   "pages": 2,
   "previous": null,
   "results": [
@@ -402,7 +402,7 @@
                             <p>
                                 This endpoint filters companies that have exactly 3 employees.
                             </p>
-                            <code>GET</code> <code>localhost:8000/api/company?employee_count=3</code>
+                            <code>GET</code> <code>&lt;base_url&gt;/api/company?employee_count=3</code>
                             <br>
                             <pre>
                                 <code>
@@ -470,7 +470,7 @@
                     <hr>
 
                     <div class="endpoint">
-                        <code>localhost:8000/api/zipcode</code>
+                        <code>&lt;base_url&gt;/api/zipcode</code>
                     </div>
 
                     <div class="parameters">
@@ -498,13 +498,13 @@
                             <p>
                                 This is a specialized endpoint that searches through addresses and returns zipcodes from certain states. The limit was set to 5 on this endpoint.
                             </p>
-                            <code>GET</code> <code>localhost:8000/api/zipcode?state=CA&limit=5</code>
+                            <code>GET</code> <code>&lt;base_url&gt;/api/zipcode?state=CA&limit=5</code>
                             <br>
                             <pre>
                                 <code>
 {
   "count": 53,
-  "next": "http://localhost:8000/api/zipcode?state=CA&limit=5&offset=5",
+  "next": "http://&lt;base_url&gt;/api/zipcode?state=CA&limit=5&offset=5",
   "pages": 10,
   "previous": null,
   "results": [
