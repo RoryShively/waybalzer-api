@@ -1,6 +1,6 @@
 # Project
 
-Description of the project goes here
+This project runs a web application with a rest api using Docker and Flask. Download the project, get it up and running using the instructions below, then upload the "us-500.csv" file provided in this repo to populate the database.
 
 ## Requirements
 
